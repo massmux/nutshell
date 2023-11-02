@@ -11,4 +11,5 @@ ENV PATH="/root/.local/bin:$PATH"
 WORKDIR /app
 COPY . .
 RUN poetry config virtualenvs.create false
-RUN poetry install --no-dev --no-root
+RUN poetry install --only main --no-root
+RUN poetry add psycopg2
